@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhotoSweep — Bulk Delete &amp; Storage Cleaner for Google Photos</title>
+  <meta name="description" content="Safely bulk select and move thousands of Google Photos, large videos, and screenshots to Trash. Supports 11+ languages, Dry-Run preview, Year Cutoff filter, and anti-freeze batching." />
+  <style>
+    :root { --bg: #0f1117; --card: #181b24; --border: rgba(255, 255, 255, 0.12); --text: #f1f3f4; --muted: #9aa0a6; --accent: #8ab4f8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: radial-gradient(circle at top right, rgba(66, 133, 244, 0.14), transparent 45%), var(--bg); color: var(--text); line-height: 1.6; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 56px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #fff; text-decoration: none; }
+    .logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #4285f4, #34a853); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; }
+    .nav-links a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 14px; }
+    .nav-links a:hover { color: #fff; }
+    .hero { text-align: center; max-width: 740px; margin: 0 auto 56px; }
+    .pill { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; background: rgba(138, 180, 248, 0.14); color: var(--accent); border: 1px solid rgba(138, 180, 248, 0.35); margin-bottom: 16px; }
+    h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.18; margin: 0 0 16px; letter-spacing: -0.02em; }
+    .subtitle { color: var(--muted); font-size: 17px; margin: 0 auto 28px; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; transition: opacity 0.15s ease; }
+    .btn:hover { opacity: 0.9; }
+    .btn-primary { background: var(--accent); color: #111318; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid var(--border); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 56px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .card h3 { margin: 0 0 8px; font-size: 16px; color: #fff; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .section-title { text-align: center; font-size: 26px; margin: 0 0 24px; }
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; max-width: 720px; margin: 0 auto 56px; }
+    .price-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+    .price-card.pro { border-color: rgba(138, 180, 248, 0.55); box-shadow: 0 10px 32px rgba(66, 133, 244, 0.12); }
+    .price { font-size: 32px; font-weight: 800; margin: 8px 0; }
+    .price span { font-size: 14px; font-weight: 500; color: var(--muted); }
+    ul { padding-left: 18px; color: var(--muted); font-size: 14px; }
+    li { margin-bottom: 6px; }
+    footer { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 13px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html"><span class="logo">P</span><span>PhotoSweep</span></a>
+      <div class="nav-links"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="privacy.html">Privacy Policy</a></div>
+    </nav>
+    <section class="hero">
+      <div class="pill">100% Local Browser Automation • Edge &amp; Chrome</div>
+      <h1>Reclaim Your 15GB Google Storage Without Clicking 10,000 Times</h1>
+      <p class="subtitle">Google Photos has no native "Select All" button. PhotoSweep safely automates batch selection, year filtering, and moving photos, large videos, and screenshots to Trash right inside your browser.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#pricing">Get PhotoSweep Pro ($4.99 Lifetime)</a>
+        <a class="btn btn-secondary" href="#features">Explore Features</a>
+      </div>
+    </section>
+    <h2 class="section-title" id="features">Built to Fix Every Annoyance of Legacy Cleaners</h2>
+    <section class="grid">
+      <div class="card"><h3>Safe Dry-Run Preview Mode</h3><p>Enabled by default. Automatically selects and highlights photos first so you can review everything before anything is moved to Trash.</p></div>
+      <div class="card"><h3>Delete by Year &amp; Instant Jump</h3><p>Keep recent memories untouched and only clean photos from 2024 &amp; older, or jump straight to any year or keyword with one click.</p></div>
+      <div class="card"><h3>Works in 11+ Languages</h3><p>Unlike extensions hardcoded for English UI only, PhotoSweep uses multi-locale dictionaries plus SVG &amp; shortcut fallbacks globally.</p></div>
+      <div class="card"><h3>Anti-Freeze Virtual Scroll</h3><p>Processes photos in configurable batches (25 / 50 / 100) with adjustable click pacing so huge libraries never crash your tab.</p></div>
+      <div class="card"><h3>15GB Storage Quick Filters</h3><p>One-click shortcuts to Videos, Screenshots, Recently Added, Google Storage Quota Manager, and Trash.</p></div>
+      <div class="card"><h3>Skip Starred &amp; 100% Private</h3><p>Automatically skips favorited/starred photos. Runs 100% locally in your browser with zero external photo uploads.</p></div>
+    </section>
+    <h2 class="section-title" id="pricing">Simple One-Time Pricing (No Subscriptions)</h2>
+    <section class="pricing">
+      <div class="price-card"><h3>Free Tier</h3><div class="price">$0 <span>/ forever</span></div><ul><li>Up to 200 items processed per day</li><li>Safe Dry-Run preview &amp; batch selection</li><li>Year Cutoff filter &amp; Search Jump</li><li>Skip starred / favorited photos</li><li>11+ language Google Photos UI support</li></ul></div>
+      <div class="price-card pro"><h3>Pro Lifetime</h3><div class="price">$4.99 <span>one-time payment</span></div><ul><li><strong>Unlimited</strong> daily bulk cleanups</li><li>Clear 10,000+ photos &amp; videos in one session</li><li>No recurring monthly subscription</li><li>Instant license key activation</li><li>All future selector &amp; UI updates included</li></ul></div>
+    </section>
+    <footer><div>© 2026 PhotoSweep. Not affiliated with Google LLC.</div><div><a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@photosweep.app">Support</a></div></footer>
+  </div>
+</body>
+</html>
