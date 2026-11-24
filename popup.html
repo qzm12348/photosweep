@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhotoSweep</title>
+  <style>
+    body {
+      width: 300px;
+      margin: 0;
+      padding: 14px;
+      background: #181a20;
+      color: #f1f3f4;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .logo {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #4285f4, #34a853);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 12px;
+    }
+    .status-pill {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+      background: rgba(251, 188, 4, 0.16);
+      color: #fdd663;
+      border: 1px solid rgba(251, 188, 4, 0.35);
+    }
+    .status-pill.pro {
+      background: rgba(52, 168, 83, 0.2);
+      color: #81c995;
+      border-color: rgba(52, 168, 83, 0.45);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+    .kv {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-size: 12px;
+      color: #bdc1c6;
+    }
+    .kv:last-child {
+      margin-bottom: 0;
+    }
+    .kv strong {
+      color: #fff;
+    }
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 9px;
+      padding: 9px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .btn-primary {
+      background: #8ab4f8;
+      color: #17181c;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e8eaed;
+    }
+    .btn:last-child {
+      margin-bottom: 0;
+    }
+    .hint {
+      margin-top: 8px;
+      font-size: 11.5px;
+      color: #9aa0a6;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span class="logo">P</span>
+      <span>PhotoSweep</span>
+    </div>
+    <span id="license-badge" class="status-pill">FREE</span>
+  </div>
+
+  <div class="card">
+    <div class="kv">
+      <span>今日剩余免费额度</span>
+      <strong id="quota-text">500 / 500</strong>
+    </div>
+    <div class="kv">
+      <span>累计已清理</span>
+      <strong id="total-cleaned-text">0</strong>
+    </div>
+  </div>
+
+  <button id="btn-open-photos" class="btn btn-primary">打开 Google 相册 (photos.google.com)</button>
+  <button id="btn-show-panel" class="btn btn-secondary">显示 / 重置悬浮控制台</button>
+
+  <div id="popup-hint" class="hint">
+    打开 Google 相册页面后，右下角会自动弹出 PhotoSweep 控制台。
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

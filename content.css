@@ -1,0 +1,386 @@
+/* PhotoSweep 悬浮控制台样式（深色毛玻璃主题，贴合 Google 相册暗黑界面） */
+#photosweep-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  background: rgba(24, 26, 32, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #f1f3f4;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  z-index: 2147483640;
+  overflow: hidden;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#photosweep-panel.ps-hidden {
+  display: none !important;
+}
+
+#photosweep-panel.ps-minimized .ps-body {
+  display: none;
+}
+
+#photosweep-panel.ps-minimized {
+  width: 245px;
+}
+
+.ps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: move;
+  user-select: none;
+}
+
+.ps-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ps-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ps-title {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: #ffffff;
+}
+
+.ps-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ps-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: opacity 0.15s ease;
+}
+
+.ps-badge:hover {
+  opacity: 0.85;
+}
+
+.ps-badge-free {
+  background: rgba(251, 188, 4, 0.16);
+  color: #fdd663;
+  border-color: rgba(251, 188, 4, 0.35);
+}
+
+.ps-badge-pro {
+  background: rgba(52, 168, 83, 0.2);
+  color: #81c995;
+  border-color: rgba(52, 168, 83, 0.45);
+}
+
+.ps-icon-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e8eaed;
+  border: none;
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.ps-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.ps-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  max-height: 78vh;
+  overflow-y: auto;
+}
+
+.ps-section-label {
+  font-size: 11.5px;
+  color: #9aa0a6;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 快捷分类跳转栏 */
+.ps-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.ps-pill-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8eaed;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 4px;
+  font-size: 11.5px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ps-pill-btn:hover {
+  background: rgba(138, 180, 248, 0.18);
+  border-color: rgba(138, 180, 248, 0.45);
+  color: #fff;
+}
+
+/* 模式选择 */
+.ps-mode-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.ps-mode-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #bdc1c6;
+  border-radius: 8px;
+  padding: 7px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.ps-mode-btn.ps-active-safe {
+  background: rgba(138, 180, 248, 0.18);
+  border-color: #8ab4f8;
+  color: #e8f0fe;
+  font-weight: 600;
+}
+
+.ps-mode-btn.ps-active-danger {
+  background: rgba(242, 139, 130, 0.18);
+  border-color: #f28b82;
+  color: #fce8e6;
+  font-weight: 600;
+}
+
+/* 批次与速率控制 */
+.ps-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ps-select {
+  background: #282a30;
+  color: #f1f3f4;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 7px;
+  padding: 5px 8px;
+  font-size: 12px;
+  outline: none;
+}
+
+.ps-range {
+  width: 120px;
+  accent-color: #8ab4f8;
+}
+
+.ps-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #d2d5d9;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 进度条与日志 */
+.ps-stats-bar {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 11.5px;
+  color: #e8eaed;
+}
+
+.ps-log-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 7px 9px;
+  height: 76px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  color: #9aa0a6;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.ps-log-line-ok {
+  color: #81c995;
+}
+
+.ps-log-line-warn {
+  color: #fdd663;
+}
+
+.ps-log-line-err {
+  color: #f28b82;
+}
+
+/* 底部操作按钮 */
+.ps-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ps-btn {
+  border: none;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.ps-btn:active {
+  transform: scale(0.98);
+}
+
+.ps-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ps-btn-primary {
+  background: #8ab4f8;
+  color: #17181c;
+}
+
+.ps-btn-danger {
+  background: #f28b82;
+  color: #1f1414;
+}
+
+.ps-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e8eaed;
+}
+
+.ps-btn-full {
+  grid-column: 1 / -1;
+}
+
+/* 已被 PhotoSweep 选中时的外框高亮，方便用户确认 */
+.ps-selected-highlight {
+  outline: 3px solid #8ab4f8 !important;
+  outline-offset: -3px !important;
+  border-radius: 6px;
+}
+
+/* Pro 解锁弹窗 */
+#photosweep-pro-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(4px);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+}
+
+#photosweep-pro-modal.ps-hidden {
+  display: none !important;
+}
+
+.ps-modal-card {
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  background: #1e2028;
+  color: #f1f3f4;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ps-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ps-modal-desc {
+  font-size: 12.5px;
+  color: #bdc1c6;
+  margin: 0;
+}
+
+.ps-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #121318;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  outline: none;
+}
+
+.ps-input:focus {
+  border-color: #8ab4f8;
+}
+
+.ps-modal-msg {
+  font-size: 12px;
+  min-height: 16px;
+}
